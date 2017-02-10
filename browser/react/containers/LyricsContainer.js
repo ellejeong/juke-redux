@@ -42,21 +42,27 @@ export default class extends Component {
     this.setState({ songQuery: song });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    
-      console.log('OUTSIDE HANDLE SUBMIT');
-    if (this.state.artistQuery && this.state.songQuery) {
-        console.log('INSIDE HANDLE SUBMIT');
-      axios.get(`/api/lyrics/${this.state.artistQuery}/${this.state.songQuery}`)
-        .then(response => {
-          const setLyricsAction = setLyrics(response.data.lyric);
-          store.dispatch(setLyricsAction);           
-        });
 
-    }
-
+  handleSubmit() {
+  if (this.state.artistQuery && this.state.songQuery) {
+    store.dispatch(fetchLyrics(this.state.artistQuery, this.state.songQuery));
   }
+}
+
+
+// NOTE: before we got to redux-thunk
+//   handleSubmit(event) {
+//     event.preventDefault();
+//       console.log('OUTSIDE HANDLE SUBMIT');
+//     if (this.state.artistQuery && this.state.songQuery) {
+//         console.log('INSIDE HANDLE SUBMIT');
+//       axios.get(`/api/lyrics/${this.state.artistQuery}/${this.state.songQuery}`)
+//         .then(response => {
+//           const setLyricsAction = setLyrics(response.data.lyric);
+//           store.dispatch(setLyricsAction);           
+//         });
+//     }
+//   }
 
   render() {
     return <Lyrics
