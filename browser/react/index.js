@@ -15,17 +15,17 @@ import Playlist from './components/Playlist';
 import store from './store';
 import {setLyrics} from './action-creators/lyrics';
 
-const unsubscribe = store.subscribe(function () {
-    console.log('----------------');
-    console.log('State changed!!', store.getState());
-});
+// const unsubscribe = store.subscribe(function () {
+//     console.log('----------------');
+//     console.log('State changed!!', store.getState());
+// });
 
-store.dispatch(setLyrics('I can feel it coming in the air tonight ... hold on ...'));
-store.dispatch(setLyrics('Never gonna give you up, never gonna let you down'));
+// store.dispatch(setLyrics('I can feel it coming in the air tonight ... hold on ...'));
+// store.dispatch(setLyrics('Never gonna give you up, never gonna let you down'));
 
-unsubscribe();
+// unsubscribe();
 
-store.dispatch(setLyrics('Hello, darkness, my old friend.'));
+// store.dispatch(setLyrics('Hello, darkness, my old friend.'));
 
 
 
