@@ -14,6 +14,7 @@ export default function (props) {
     <div id="lyrics">
       <form onSubmit={props.handleSubmit}>
         <div>
+        {console.log('LYRICS PROPS', props)}
           <input type="text" value={props.artistQuery} placeholder="Artist" onChange={artistChange}/>
           <input type="text" value={props.songQuery} placeholder="Song" onChange={songChange}/>
         </div>

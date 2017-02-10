@@ -10,6 +10,20 @@ const Player = (props) => {
   const toggle = props.toggle;
   const next = props.next;
 
+// From this, we can see that we need to handle the following state:
+// isPlaying --> boolean
+// currentSong
+// currentSongList
+
+// And we'll need to define the following behavior:
+// play
+// pause
+// load
+// startSong
+// toggleOne
+// toggle
+
+
   return (
     <footer>
       <div style={!currentSong.id ? {display: 'none'} : null}>
